@@ -1,0 +1,1492 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(126, 30, 55, 0.28),
+            transparent 35%
+        ),
+        #12070c;
+
+    color: #fff;
+
+    font-family: "Montserrat", sans-serif;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    font-family: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   VARIÁVEIS
+========================================= */
+
+:root {
+    --bg: #12070c;
+    --bg-light: #1c0b12;
+
+    --pink: #f47b9c;
+    --pink-light: #ffb1c6;
+
+    --text: #fff7f9;
+    --text-soft: #d8c5cb;
+
+    --border: rgba(255, 126, 158, 0.35);
+
+    --serif: "Cormorant Garamond", serif;
+}
+
+
+/* =========================================
+   TIPOGRAFIA
+========================================= */
+
+h1,
+h2,
+h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+h1 span,
+h2 span,
+h3 span {
+    color: var(--pink);
+    font-style: italic;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.eyebrow {
+    color: var(--pink-light);
+
+    font-size: 0.65rem;
+    font-weight: 600;
+
+    letter-spacing: 0.22em;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        max(25px, env(safe-area-inset-top))
+        24px
+        max(25px, env(safe-area-inset-bottom))
+        24px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(126, 24, 52, 0.4),
+            transparent 45%
+        ),
+        #0c0508;
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
+}
+
+.intro.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-content {
+    width: 100%;
+    max-width: 400px;
+
+    text-align: center;
+
+    animation: introAppear 1.2s ease;
+}
+
+.intro-heart {
+    display: block;
+
+    color: var(--pink);
+
+    font-size: 4.5rem;
+
+    margin-bottom: 30px;
+
+    animation: heartbeat 2s infinite;
+}
+
+.intro h1 {
+    font-size: clamp(3rem, 13vw, 5rem);
+
+    margin-bottom: 28px;
+}
+
+.intro h1 span {
+    display: block;
+}
+
+.intro-text {
+    color: var(--text-soft);
+
+    font-size: 0.9rem;
+
+    margin-bottom: 32px;
+}
+
+.intro small {
+    display: block;
+
+    color: #9b7f89;
+
+    font-size: 0.65rem;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.primary-button,
+.secondary-button {
+    border: 0;
+
+    min-height: 52px;
+
+    padding: 14px 24px;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.primary-button {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f47b9c,
+            #c95074
+        );
+
+    box-shadow:
+        0 10px 30px rgba(244, 123, 156, 0.22);
+}
+
+.primary-button span {
+    margin-left: 6px;
+}
+
+.primary-button:active {
+    transform: scale(0.96);
+}
+
+.secondary-button {
+    color: white;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+}
+
+.secondary-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding:
+        max(12px, env(safe-area-inset-top))
+        20px
+        12px;
+
+    background: rgba(18, 7, 12, 0.65);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.logo {
+    color: var(--pink);
+
+    font-family: var(--serif);
+
+    font-size: 2rem;
+}
+
+.menu-button {
+    width: 44px;
+    height: 44px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.04);
+
+    color: white;
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+}
+
+.nav-links {
+    position: absolute;
+
+    top: 100%;
+    left: 12px;
+    right: 12px;
+
+    padding: 10px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: rgba(20, 8, 13, 0.97);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+}
+
+.nav-links.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.nav-links a {
+    padding: 14px 15px;
+
+    border-radius: 12px;
+
+    color: var(--text-soft);
+
+    font-size: 0.75rem;
+}
+
+.nav-links a:active {
+    background: rgba(244, 123, 156, 0.12);
+    color: white;
+}
+
+
+/* =========================================
+   SEÇÕES
+========================================= */
+
+.section {
+    position: relative;
+
+    width: 100%;
+
+    padding:
+        90px
+        20px;
+
+    overflow: hidden;
+}
+
+.section-heading {
+    max-width: 650px;
+
+    margin:
+        0 auto
+        45px;
+
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(2.7rem, 12vw, 4.5rem);
+
+    margin-bottom: 20px;
+}
+
+.section-heading p:last-child {
+    color: var(--text-soft);
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 100px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(18,7,12,0.25),
+            #12070c
+        ),
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(180, 50, 85, 0.3),
+            transparent 45%
+        );
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 650px;
+
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(3.6rem, 17vw, 7rem);
+
+    margin-bottom: 25px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 20px 0 25px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    width: 55px;
+    height: 1px;
+
+    background: var(--border);
+}
+
+.divider span {
+    color: var(--pink);
+
+    font-size: 1.1rem;
+}
+
+.hero-text {
+    color: var(--text-soft);
+
+    max-width: 500px;
+
+    margin: auto;
+
+    font-size: 0.9rem;
+}
+
+.hero-highlight {
+    color: var(--pink-light);
+
+    font-family: var(--serif);
+
+    font-size: 2rem;
+
+    margin-top: 8px;
+}
+
+.scroll-button {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 45px auto 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #a88b94;
+
+    cursor: pointer;
+
+    font-size: 0.65rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================
+   ADMIRAÇÃO
+========================================= */
+
+.admiration {
+    background:
+        linear-gradient(
+            to bottom,
+            #12070c,
+            #170910
+        );
+}
+
+.faith-highlight {
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    padding: 30px 22px;
+
+    text-align: center;
+
+    border: 1px solid var(--pink);
+
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(244,123,156,0.08),
+            transparent 70%
+        );
+}
+
+.faith-icon {
+    color: var(--pink);
+
+    font-size: 2.5rem;
+
+    margin-bottom: 15px;
+}
+
+.faith-highlight h3 {
+    font-size: 2rem;
+
+    margin-bottom: 15px;
+}
+
+.faith-highlight p:last-child {
+    color: var(--text-soft);
+
+    font-size: 0.85rem;
+}
+
+.cards {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.love-card {
+    padding: 25px 22px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.025);
+
+    text-align: center;
+}
+
+.card-icon {
+    color: var(--pink);
+
+    display: block;
+
+    font-size: 2rem;
+
+    margin-bottom: 12px;
+}
+
+.love-card h3 {
+    font-size: 1.7rem;
+
+    margin-bottom: 8px;
+}
+
+.love-card p {
+    color: var(--text-soft);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.timeline {
+    position: relative;
+
+    max-width: 750px;
+
+    margin: auto;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 22px;
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            var(--border),
+            transparent
+        );
+}
+
+.timeline-item {
+    position: relative;
+
+    display: flex;
+
+    gap: 20px;
+
+    margin-bottom: 35px;
+}
+
+.timeline-icon {
+    position: relative;
+
+    z-index: 2;
+
+    flex-shrink: 0;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--pink);
+
+    border-radius: 50%;
+
+    background: var(--bg);
+
+    color: var(--pink);
+}
+
+.timeline-content {
+    padding-top: 3px;
+}
+
+.timeline-content span {
+    color: var(--pink-light);
+
+    font-size: 0.6rem;
+
+    letter-spacing: 0.12em;
+}
+
+.timeline-content h3 {
+    font-size: 1.8rem;
+
+    margin: 5px 0;
+}
+
+.timeline-content p {
+    color: var(--text-soft);
+
+    font-size: 0.8rem;
+}
+
+
+/* =========================================
+   VERSÍCULOS
+========================================= */
+
+.verses {
+    background: #16080e;
+}
+
+.verse-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+
+    max-width: 1000px;
+
+    margin: auto;
+}
+
+.verse-card {
+    position: relative;
+
+    padding: 30px 22px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.035),
+            rgba(255,255,255,0.01)
+        );
+
+    text-align: center;
+}
+
+.cross {
+    display: block;
+
+    color: var(--pink);
+
+    font-size: 1.4rem;
+
+    margin-bottom: 15px;
+}
+
+.verse-card p {
+    color: var(--text);
+
+    font-family: var(--serif);
+
+    font-size: 1.35rem;
+
+    line-height: 1.45;
+}
+
+.verse-card small {
+    display: block;
+
+    color: var(--pink-light);
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.15em;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   CONTADOR
+========================================= */
+
+.counter-section {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(125, 31, 56, 0.22),
+            transparent 60%
+        );
+}
+
+.counter-grid {
+    width: 100%;
+    max-width: 600px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+.counter-card {
+    min-height: 130px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,0.025);
+}
+
+.counter-card strong {
+    color: var(--pink);
+
+    font-family: var(--serif);
+
+    font-size: clamp(2.7rem, 12vw, 4rem);
+
+    line-height: 1;
+}
+
+.counter-card span {
+    color: var(--text-soft);
+
+    font-size: 0.6rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+    margin-top: 8px;
+}
+
+.counter-message {
+    color: var(--pink-light);
+
+    font-family: var(--serif);
+
+    font-size: 1.4rem;
+
+    font-style: italic;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   MENSAGENS
+========================================= */
+
+.message-list {
+    width: 100%;
+    max-width: 650px;
+
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.message-button {
+    width: 100%;
+
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 15px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.025);
+
+    color: white;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.message-button:active {
+    transform: scale(0.98);
+
+    background: rgba(244,123,156,0.08);
+}
+
+.message-icon {
+    flex-shrink: 0;
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(244,123,156,0.1);
+
+    color: var(--pink);
+
+    font-size: 1.3rem;
+}
+
+.message-button > span:nth-child(2) {
+    flex: 1;
+}
+
+.message-button strong {
+    display: block;
+
+    font-size: 0.78rem;
+
+    margin-bottom: 4px;
+}
+
+.message-button small {
+    color: #a98f97;
+
+    font-size: 0.65rem;
+}
+
+.message-button b {
+    color: var(--pink);
+
+    font-size: 1.2rem;
+}
+
+
+/* =========================================
+   CARTA
+========================================= */
+
+.letter {
+    background:
+        linear-gradient(
+            to bottom,
+            #16080e,
+            #10060a
+        );
+}
+
+.letter-paper {
+    width: 100%;
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 35px 24px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255,255,255,0.04),
+            transparent 50%
+        );
+}
+
+.letter-paper h2 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+
+    margin-bottom: 30px;
+}
+
+.letter-content {
+    color: var(--text-soft);
+
+    font-family: var(--serif);
+
+    font-size: 1.2rem;
+
+    line-height: 1.75;
+}
+
+.letter-content p {
+    margin-bottom: 18px;
+}
+
+.signature {
+    color: var(--pink-light);
+
+    font-style: italic;
+
+    text-align: right;
+
+    margin-top: 35px;
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+.final-section {
+    min-height: 90svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(130, 28, 58, 0.3),
+            transparent 60%
+        );
+}
+
+.final-content {
+    width: 100%;
+    max-width: 600px;
+}
+
+.final-content h2 {
+    font-size: clamp(3.2rem, 15vw, 6rem);
+
+    margin-bottom: 25px;
+}
+
+.final-content > p:not(.eyebrow) {
+    color: var(--text-soft);
+
+    font-size: 0.9rem;
+
+    margin-bottom: 30px;
+}
+
+.final-cross {
+    color: var(--pink);
+
+    font-size: 4rem;
+
+    margin: 50px 0 15px;
+}
+
+.final-content small {
+    color: #8d727b;
+
+    font-size: 0.6rem;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        25px
+        20px
+        max(25px, env(safe-area-inset-bottom));
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.78);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 420px;
+
+    max-height: 85svh;
+
+    overflow-y: auto;
+
+    padding: 40px 24px 30px;
+
+    border: 1px solid var(--pink);
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(244,123,156,0.12),
+            transparent 55%
+        ),
+        #180910;
+
+    text-align: center;
+
+    transform: translateY(20px) scale(0.97);
+
+    transition: transform 0.3s ease;
+}
+
+.modal.active .modal-box {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #c5a8b0;
+
+    font-size: 1.8rem;
+
+    cursor: pointer;
+}
+
+.modal-icon {
+    color: var(--pink);
+
+    font-size: 3rem;
+
+    margin-bottom: 12px;
+}
+
+.modal-box h2 {
+    font-size: 2.3rem;
+
+    margin-bottom: 18px;
+}
+
+.modal-box p {
+    color: var(--text-soft);
+
+    font-family: var(--serif);
+
+    font-size: 1.3rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   CORAÇÕES FLUTUANTES
+========================================= */
+
+#hearts-container {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+
+    bottom: -30px;
+
+    color: var(--pink);
+
+    opacity: 0;
+
+    animation: floatHeart linear forwards;
+}
+
+
+/* =========================================
+   ANIMAÇÕES
+========================================= */
+
+.hidden {
+    opacity: 0;
+
+    transform: translateY(25px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+@keyframes floatHeart {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(0)
+            scale(0.7)
+            rotate(0deg);
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            translateY(-110vh)
+            scale(1.2)
+            rotate(25deg);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.12);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.08);
+    }
+}
+
+@keyframes introAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (min-width: 600px) {
+
+    .section {
+        padding:
+            120px
+            40px;
+    }
+
+    .cards {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .verse-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .faith-highlight {
+        padding: 45px;
+    }
+
+}
+
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 900px) {
+
+    .menu-button {
+        display: none;
+    }
+
+    .navbar {
+        padding:
+            15px
+            40px;
+    }
+
+    .nav-links {
+        position: static;
+
+        display: flex;
+        flex-direction: row;
+
+        align-items: center;
+
+        gap: 8px;
+
+        padding: 0;
+
+        border: 0;
+
+        background: transparent;
+
+        opacity: 1;
+        visibility: visible;
+
+        transform: none;
+    }
+
+    .nav-links a {
+        padding: 10px 12px;
+
+        font-size: 0.65rem;
+    }
+
+    .nav-links a:hover {
+        color: var(--pink);
+
+        background: rgba(244,123,156,0.07);
+    }
+
+    .section {
+        padding:
+            140px
+            60px;
+    }
+
+    .cards {
+        gap: 20px;
+    }
+
+    .verse-grid {
+        gap: 20px;
+    }
+
+    .counter-grid {
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        max-width: 850px;
+    }
+
+}
+
+
+/* =========================================
+   TELAS MUITO PEQUENAS
+========================================= */
+
+@media (max-width: 360px) {
+
+    .section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hero h1 {
+        font-size: 3.3rem;
+    }
+
+    .intro h1 {
+        font-size: 2.8rem;
+    }
+
+    .faith-highlight {
+        padding: 25px 18px;
+    }
+
+    .counter-card {
+        min-height: 115px;
+    }
+
+    .counter-card strong {
+        font-size: 2.5rem;
+    }
+
+    .letter-paper {
+        padding: 28px 19px;
+    }
+
+}
+
+
+/* =========================================
+   REDUÇÃO DE MOVIMENTO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .hidden {
+        opacity: 1;
+        transform: none;
+    }
+
+}
+
+
+/* =========================================
+   ALTURA PEQUENA
+========================================= */
+
+@media (max-height: 650px) {
+
+    .hero {
+        min-height: 750px;
+    }
+
+    .intro-heart {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+    .intro h1 {
+        margin-bottom: 15px;
+    }
+
+    .intro-text {
+        margin-bottom: 20px;
+    }
+
+}

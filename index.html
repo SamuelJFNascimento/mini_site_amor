@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    >
+
+    <meta
+        name="theme-color"
+        content="#12070c"
+    >
+
+    <meta
+        name="description"
+        content="Uma pequena parte do meu coração para você."
+    >
+
+    <title>Para o amor da minha vida ❤️</title>
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         CORAÇÕES
+    ========================== -->
+    <div id="hearts-container" aria-hidden="true"></div>
+
+
+    <!-- =========================
+         ABERTURA
+    ========================== -->
+
+    <div class="intro" id="intro">
+
+        <div class="intro-content">
+
+            <span class="intro-heart">♡</span>
+
+            <p class="eyebrow">
+                UMA SURPRESA PARA VOCÊ
+            </p>
+
+            <h1>
+                Tenho algo para
+                <span>te mostrar...</span>
+            </h1>
+
+            <p class="intro-text">
+                Não é apenas um site.
+                <br>
+                É um pedacinho do que existe
+                <br>
+                no meu coração.
+            </p>
+
+            <button
+                class="primary-button"
+                onclick="entrar()"
+            >
+                Abrir minha surpresa
+                <span>♡</span>
+            </button>
+
+            <small>
+                Feito com amor, fé e carinho.
+            </small>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         NAVEGAÇÃO
+    ========================== -->
+
+    <header class="navbar">
+
+        <a
+            href="#inicio"
+            class="logo"
+            aria-label="Ir para o início"
+        >
+            ♡
+        </a>
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            onclick="toggleMenu()"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="#inicio" onclick="fecharMenu()">
+                Início
+            </a>
+
+            <a href="#historia" onclick="fecharMenu()">
+                Nossa história
+            </a>
+
+            <a href="#versiculos" onclick="fecharMenu()">
+                Versículos
+            </a>
+
+            <a href="#contador" onclick="fecharMenu()">
+                Contador
+            </a>
+
+            <a href="#mensagens" onclick="fecharMenu()">
+                Abra quando...
+            </a>
+
+            <a href="#carta" onclick="fecharMenu()">
+                Carta
+            </a>
+
+            <a href="#final" onclick="fecharMenu()">
+                Final
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero section" id="inicio">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    12 DE JULHO DE 2026
+                </p>
+
+                <h1>
+                    Para o amor
+                    <br>
+                    da <span>minha vida.</span>
+                </h1>
+
+                <div class="divider">
+                    <span>♡</span>
+                </div>
+
+                <p class="hero-text">
+                    Eu queria encontrar uma forma diferente
+                    de dizer algo que talvez eu nem sempre
+                    consiga colocar em palavras:
+                </p>
+
+                <p class="hero-highlight">
+                    eu amo você.
+                </p>
+
+                <button
+                    class="scroll-button"
+                    onclick="ir('admiracao')"
+                    aria-label="Continuar"
+                >
+                    <span>Role para continuar</span>
+                    ↓
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ADMIRAÇÃO
+        ========================== -->
+
+        <section class="section admiration" id="admiracao">
+
+            <div class="section-heading hidden">
+
+                <p class="eyebrow">
+                    O QUE EU MAIS ADMIRO EM VOCÊ
+                </p>
+
+                <h2>
+                    Existe algo em você
+                    <br>
+                    que me <span>encanta.</span>
+                </h2>
+
+                <p>
+                    Eu amo seu sorriso, seu jeito,
+                    sua companhia e todos aqueles
+                    pequenos detalhes que fazem
+                    você ser você.
+                </p>
+
+            </div>
+
+
+            <div class="faith-highlight hidden">
+
+                <div class="faith-icon">
+                    ✝
+                </div>
+
+                <p class="eyebrow">
+                    MAS ACIMA DE TUDO
+                </p>
+
+                <h3>
+                    Eu amo o amor que você
+                    tem por Jesus.
+                </h3>
+
+                <p>
+                    Ver sua fé, sua busca por Deus
+                    e o lugar que Jesus ocupa no seu
+                    coração faz eu admirar ainda mais
+                    a mulher que você é.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <article class="love-card hidden">
+
+                    <span class="card-icon">
+                        ✝
+                    </span>
+
+                    <h3>
+                        Sua fé
+                    </h3>
+
+                    <p>
+                        A maneira como você busca
+                        a Deus e coloca Ele no centro
+                        da sua vida.
+                    </p>
+
+                </article>
+
+
+                <article class="love-card hidden">
+
+                    <span class="card-icon">
+                        ♥
+                    </span>
+
+                    <h3>
+                        Seu coração
+                    </h3>
+
+                    <p>
+                        Seu jeito de amar, cuidar
+                        e demonstrar carinho.
+                    </p>
+
+                </article>
+
+
+                <article class="love-card hidden">
+
+                    <span class="card-icon">
+                        ★
+                    </span>
+
+                    <h3>
+                        Quem você é
+                    </h3>
+
+                    <p>
+                        Sua essência, seus sonhos,
+                        seu jeito e tudo aquilo
+                        que torna você única.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HISTÓRIA
+        ========================== -->
+
+        <section class="section history" id="historia">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    NÓS DOIS
+                </p>
+
+                <h2>
+                    Uma história
+                    <br>
+                    <span>que ainda está começando.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="timeline">
+
+                <article class="timeline-item hidden">
+
+                    <div class="timeline-icon">
+                        ♥
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span>
+                            12 DE JULHO DE 2026
+                        </span>
+
+                        <h3>
+                            O nosso começo
+                        </h3>
+
+                        <p>
+                            O dia em que começamos oficialmente
+                            a escrever nossa história.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="timeline-item hidden">
+
+                    <div class="timeline-icon">
+                        ♡
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span>
+                            CADA MOMENTO
+                        </span>
+
+                        <h3>
+                            Os nossos momentos
+                        </h3>
+
+                        <p>
+                            Cada conversa, risada, abraço,
+                            instante ao seu lado passa a fazer
+                            parte de algo que é só nosso.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="timeline-item hidden">
+
+                    <div class="timeline-icon">
+                        ✝
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span>
+                            NOSSO PROPÓSITO
+                        </span>
+
+                        <h3>
+                            Deus no centro
+                        </h3>
+
+                        <p>
+                            Mais do que construir um relacionamento,
+                            quero construir algo baseado em amor,
+                            respeito, fé e propósito.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="timeline-item hidden">
+
+                    <div class="timeline-icon">
+                        ∞
+                    </div>
+
+                    <div class="timeline-content">
+
+                        <span>
+                            O QUE AINDA VAMOS VIVER
+                        </span>
+
+                        <h3>
+                            O nosso futuro
+                        </h3>
+
+                        <p>
+                            Essa história ainda tem muitos capítulos.
+                            E eu espero estar ao seu lado em cada um deles.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             VERSÍCULOS
+        ========================== -->
+
+        <section class="section verses" id="versiculos">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    PALAVRAS QUE INSPIRAM NOSSO AMOR
+                </p>
+
+                <h2>
+                    Amor segundo
+                    <br>
+                    a <span>Palavra.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="verse-grid">
+
+                <article class="verse-card hidden">
+
+                    <span class="cross">
+                        ✝
+                    </span>
+
+                    <p>
+                        “O amor é paciente, o amor é bondoso.
+                        Tudo sofre, tudo crê, tudo espera,
+                        tudo suporta.”
+                    </p>
+
+                    <small>
+                        1 CORÍNTIOS 13:4–7
+                    </small>
+
+                </article>
+
+
+                <article class="verse-card hidden">
+
+                    <span class="cross">
+                        ✝
+                    </span>
+
+                    <p>
+                        “Assim, permanecem agora estes três:
+                        a fé, a esperança e o amor.
+                        O maior deles, porém, é o amor.”
+                    </p>
+
+                    <small>
+                        1 CORÍNTIOS 13:13
+                    </small>
+
+                </article>
+
+
+                <article class="verse-card hidden">
+
+                    <span class="cross">
+                        ✝
+                    </span>
+
+                    <p>
+                        “Nem muitas águas conseguem apagar
+                        o amor; os rios não conseguem levá-lo
+                        na correnteza.”
+                    </p>
+
+                    <small>
+                        CÂNTICOS 8:7
+                    </small>
+
+                </article>
+
+
+                <article class="verse-card hidden">
+
+                    <span class="cross">
+                        ✝
+                    </span>
+
+                    <p>
+                        “E, acima de tudo, revistam-se do amor,
+                        que é o elo perfeito.”
+                    </p>
+
+                    <small>
+                        COLOSSENSES 3:14
+                    </small>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTADOR
+        ========================== -->
+
+        <section class="section counter-section" id="contador">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    DESDE 12/07/2026
+                </p>
+
+                <h2>
+                    O tempo ao
+                    <br>
+                    <span>seu lado.</span>
+                </h2>
+
+                <p>
+                    Juntos há...
+                </p>
+
+            </div>
+
+
+            <div class="counter-grid">
+
+                <div class="counter-card">
+                    <strong id="dias">0</strong>
+                    <span>dias</span>
+                </div>
+
+                <div class="counter-card">
+                    <strong id="horas">0</strong>
+                    <span>horas</span>
+                </div>
+
+                <div class="counter-card">
+                    <strong id="minutos">0</strong>
+                    <span>minutos</span>
+                </div>
+
+                <div class="counter-card">
+                    <strong id="segundos">0</strong>
+                    <span>segundos</span>
+                </div>
+
+            </div>
+
+
+            <p class="counter-message">
+                Cada segundo com você
+                é um presente de Deus na minha vida.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             ABRA QUANDO
+        ========================== -->
+
+        <section class="section messages" id="mensagens">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    PARA QUALQUER MOMENTO
+                </p>
+
+                <h2>
+                    Abra quando
+                    <br>
+                    <span>precisar de mim.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="message-list">
+
+                <button
+                    class="message-button hidden"
+                    onclick="msg('triste')"
+                >
+
+                    <span class="message-icon">
+                        ♡
+                    </span>
+
+                    <span>
+                        <strong>
+                            Abra quando estiver triste
+                        </strong>
+
+                        <small>
+                            Você não está sozinha, Deus te ama muito e eu também.
+                        </small>
+                    </span>
+
+                    <b>→</b>
+
+                </button>
+
+
+                <button
+                    class="message-button hidden"
+                    onclick="msg('saudade')"
+                >
+
+                    <span class="message-icon">
+                        ✉
+                    </span>
+
+                    <span>
+                        <strong>
+                            Abra quando sentir minha falta
+                        </strong>
+
+                        <small>
+                            Eu também penso em você, todos os dias sinto a sua falta.
+                        </small>
+                    </span>
+
+                    <b>→</b>
+
+                </button>
+
+
+                <button
+                    class="message-button hidden"
+                    onclick="msg('abraco')"
+                >
+
+                    <span class="message-icon">
+                        ♡
+                    </span>
+
+                    <span>
+                        <strong>
+                            Abra quando precisar de um abraço
+                        </strong>
+
+                        <small>
+                            Estou aqui, mesmo de longe.
+                        </small>
+                    </span>
+
+                    <b>→</b>
+
+                </button>
+
+
+                <button
+                    class="message-button hidden"
+                    onclick="msg('amor')"
+                >
+
+                    <span class="message-icon">
+                        ♥
+                    </span>
+
+                    <span>
+                        <strong>
+                            Abra quando quiser lembrar
+                        </strong>
+
+                        <small>
+                            o quanto eu amo você.
+                        </small>
+                    </span>
+
+                    <b>→</b>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CARTA
+        ========================== -->
+
+        <section class="section letter" id="carta">
+
+            <div class="letter-paper hidden">
+
+                <p class="eyebrow">
+                    DO SEU GATITO, PARA VOCÊ
+                </p>
+
+                <h2>
+                    Uma carta
+                    <br>
+                    <span>do meu coração.</span>
+                </h2>
+
+                <div class="letter-content">
+
+                    <p>
+                        Minha Gatita,
+                    </p>
+
+                    <p>
+                        Eu fiz tudo isso porque queria
+                        encontrar uma forma de entregar
+                        algo que fosse mais do que uma
+                        simples mensagem.
+                    </p>
+
+                    <p>
+                        Desde o dia 12 de julho de 2026,
+                        uma nova parte da nossa história
+                        começou a ser escrita.
+                    </p>
+
+                    <p>
+                        E eu sou muito feliz por poder
+                        escrever essa parte ao seu lado.
+                    </p>
+
+                    <p>
+                        Eu amo muitas coisas em você.
+                        Amo seu sorriso, seu jeito,
+                        nossas conversas, nossas risadas
+                        e os momentos que compartilhamos.
+                    </p>
+
+                    <p>
+                        Mas existe algo que admiro de
+                        uma forma especial: o amor que
+                        você tem por Jesus.
+                    </p>
+
+                    <p>
+                        Ver sua fé e a forma como Deus
+                        ocupa um lugar tão importante
+                        no seu coração me faz admirar
+                        ainda mais você.
+                    </p>
+
+                    <p>
+                        Quero que nosso relacionamento
+                        seja sempre um lugar de amor,
+                        respeito, companheirismo e,
+                        acima de tudo, Deus.
+                    </p>
+
+                    <p class="signature">
+                        Com amor, sempre. ♡
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FINAL
+        ========================== -->
+
+        <section class="section final-section" id="final">
+
+            <div class="final-content hidden">
+
+                <p class="eyebrow">
+                    A ÚLTIMA COISA QUE QUERO QUE VOCÊ SAIBA
+                </p>
+
+                <h2>
+                    Eu escolheria
+                    <br>
+                    <span>você novamente.</span>
+                </h2>
+
+                <p>
+                    Entre tantas pessoas, tantos caminhos
+                    e tantas histórias, eu agradeço a Deus
+                    por ter colocado você na minha.
+                </p>
+
+                <button
+                    class="primary-button"
+                    onclick="finalSurprise()"
+                >
+                    Ainda tem uma última surpresa
+                    <span>♥</span>
+                </button>
+
+                <div class="final-cross">
+                    ✝
+                </div>
+
+                <small>
+                    Feito com amor, fé e carinho. ♡
+                </small>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         MODAL
+    ========================== -->
+
+    <div
+        class="modal"
+        id="modal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal-overlay"
+            onclick="fechar()"
+        ></div>
+
+        <div
+            class="modal-box"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                class="modal-close"
+                onclick="fechar()"
+                aria-label="Fechar"
+            >
+                ×
+            </button>
+
+            <div
+                class="modal-icon"
+                id="modalIcon"
+            >
+                ♡
+            </div>
+
+            <h2 id="modalTitle">
+                Nunca esqueça disso
+            </h2>
+
+            <p id="modalText"></p>
+
+            <button
+                class="secondary-button"
+                onclick="fechar()"
+            >
+                Fechar
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
